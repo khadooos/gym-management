@@ -1,11 +1,11 @@
 import mysql.connector as c
 import tabulate as t
-hostname=input("HOSTNAME FOR GYM : ")
-username=input(f"ADMIN USERNAME FOR GYM ({hostname}) : ")
+hostname=input("HOSTNAME FOR EMPLOYMENT : ")
+username=input(f"ADMIN USERNAME FOR EMPLOYMENT ({hostname}) : ")
 password=input(f"PASSWORD FOR {username}@{hostname} : ")
 con=c.connect(host=hostname,user=username, passwd=password)
 if con.is_connected():
-    print("SUCCESSFULLY CONNECTED TO GYM'S DATABASE")
+    print("SUCCESSFULLY CONNECTED TO EMPLOYMENT'S DATABASE")
 if con.is_connected():
     cursor=con.cursor()
 
@@ -13,7 +13,7 @@ if con.is_connected():
 
     |||||                                      |||||
     ||||        ----------------------          ||||
-    |||========| XFORCE GYM MANGEMENT |==========|||
+    |||========| EMPLOYMENT MANGEMENT |==========|||
     ||||        ----------------------          ||||
     |||||                                      |||||
 
@@ -21,8 +21,8 @@ if con.is_connected():
 
     #CREATING IMPORTANT TABLES
 
-    cursor.execute("CREATE DATABASE IF NOT EXISTS GYM;")
-    cursor.execute("USE GYM")
+    cursor.execute("CREATE DATABASE IF NOT EXISTS EMPLOYMENT;")
+    cursor.execute("USE EMPLOYMENT")
     cursor.execute("CREATE TABLE IF NOT EXISTS FEES(SILVER INT, GOLD INT, PLATINUM INT)")
     cursor.execute("CREATE TABLE IF NOT EXISTS LOGIN(USERNAME VARCHAR(25), PASSWORD VARCHAR(25) NOT NULL)")
     cursor.execute("CREATE TABLE IF NOT EXISTS MEMBER(ID INT, NAME VARCHAR(25), GENDER CHAR(1), CATAGORY VARCHAR(25), AMOUNT INT)")
@@ -85,7 +85,7 @@ while True:
                 print('''
         |||||                                      |||||
         ||||        ----------------------          ||||
-        |||========|   XFORCE GYM HOME    |==========|||
+        |||========|   EMPLOYMENT HOME    |==========|||
         ||||        ----------------------          ||||
         |||||                                      |||||
 
@@ -202,7 +202,7 @@ while True:
                         print('''
         |||||                                      |||||
         ||||        ----------------------          ||||
-        |||========| XFORCE MODIFICTAIONS |==========|||
+        |||========|  MODIFICTAIONS |==========|||
         ||||        ----------------------          ||||
         |||||                                      |||||
 
